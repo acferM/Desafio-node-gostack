@@ -13,6 +13,7 @@ describe("Projects", () => {
       });
 
     expect(isUuid(response.body.id)).toBe(true);
+    console.log(response.body.id)
 
     expect(response.body).toMatchObject({
       url: "https://github.com/Rocketseat/umbriel",
