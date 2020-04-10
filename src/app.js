@@ -10,7 +10,7 @@ app.use(cors());
 const repositories = [];
 
 app.get("/repositories", (request, response) => {
-  return response.json({repositories})
+  return response.json(repositories)
 });
 
 app.post("/repositories", (request, response) => {
@@ -33,7 +33,7 @@ app.post("/repositories", (request, response) => {
 
   repositories.push(repository)
 
-  return response.json({repository})
+  return response.json(repository)
 });
 
 app.put("/repositories/:id", (request, response) => {
@@ -57,7 +57,7 @@ app.put("/repositories/:id", (request, response) => {
 
   repositories[repositoryIndex] = result
 
-  return response.json({result})
+  return response.json(result)
 });
 
 app.delete("/repositories/:id", (req, res) => {
@@ -87,7 +87,7 @@ app.post("/repositories/:id/like", (request, response) => {
 
   repository.likes = repository.likes + 1
 
-  return response.json({repository})
+  return response.json(repository)
 });
 
 module.exports = app;
